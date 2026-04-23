@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaswot Bhandari — Designer & Developer</title>
+  <meta name="description" content="Shaswot Bhandari portfolio featuring design, education, services, and contact details." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D0D0D'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-size='30' font-family='Georgia,serif' fill='%23F4F0E8'%3ESB%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts: Cormorant Garamond (display) + Syne (UI/body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-label">Loading Portfolio</span>
+      <div class="loader-bar"><span id="loader-fill"></span></div>
+    </div>
+  </div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress-fill" id="scroll-progress-fill"></span>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo" id="nav-logo" aria-label="Back to top">
+      <span class="nav-logo-mark" aria-hidden="true">
+        <span class="nav-logo-initials">SB</span>
+        <span class="nav-logo-ring"></span>
+      </span>
+      <span class="nav-logo-copy">
+        <span class="nav-logo-name">Shaswot Bhandari</span>
+        <span class="nav-logo-tag">Designer / Developer</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#hero"    class="nav-link">Home</a>
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills"   class="nav-link">Skills</a>
+      <a href="#contact"  class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta">Send Message ↗</a>
+      <button class="hamburger" id="mobile-menu-btn" aria-label="Open mobile menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close mobile menu">×</button>
+    <nav class="mobile-menu-links">
+      <a href="#hero" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#education" class="mobile-link">Education</a>
+      <a href="#achievements" class="mobile-link">Achievements</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="mailto:shaswotbhandari1@gmail.com" class="mobile-email">shaswotbhandari1@gmail.com</a>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="hero">
+
+    <!-- Top label -->
+    <div class="hero-tag" id="hero-tag">HELLO, I AM</div>
+
+    <!-- Big name -->
+    <h1 class="hero-name">
+      <span class="name-wrap"><span class="name-line">Shaswot</span></span>
+      <span class="name-wrap"><span class="name-line italic-name">Bhandari.</span></span>
+    </h1>
+
+    <!-- Sub tagline -->
+    <p class="hero-sub" id="hero-sub">
+      Designer and developer based in Kathmandu, building thoughtful digital work,
+      balancing freelance projects with my studies.
+    </p>
+
+    <div class="hero-quick-links" id="hero-quick-links">
+      <a href="https://github.com/ShaswotBh" target="_blank" rel="noopener noreferrer" class="hero-quick-link">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/shaswot-bhandari-508b73283" target="_blank" rel="noopener noreferrer" class="hero-quick-link">LinkedIn ↗</a>
+    </div>
+
+    <!-- Bottom info bar -->
+    <div class="hero-info" id="hero-info">
+      <div class="info-item">
+        <span class="info-label">Based in</span>
+        <span class="info-val">Kathmandu, Nepal</span>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="info-label">Available for</span>
+        <span class="info-val">Part-time Work</span>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="info-label">Status</span>
+        <span class="info-val"><span class="status-dot"></span>Open to work</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about">
+    <div class="about-grid">
+      <!-- Left: label + title -->
+      <div class="about-left">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About</h2>
+      </div>
+
+      <!-- Right: content -->
+      <div class="about-right">
+        <p class="about-text reveal-up">
+          I’m Shaswot Bhandari, a designer and developer who likes simple, thoughtful interfaces and clean visual communication. I enjoy working on projects that feel calm, useful, and visually strong.
+        </p>
+        <p class="about-text reveal-up">
+          I’m currently in my 3rd year at IIMS College, Bhagwati Bahal, Naxal, Kathmandu, pursuing a Bachelor of Computer Science (Hons) with AI specialization. The program is affiliated with Taylor’s University of Malaysia. Experience: [Add experience details here].
+        </p>
+
+        <div class="about-links reveal-up">
+          <a href="https://www.behance.net/shaswotbhandari" target="_blank" class="view-all-btn cta-match-header">Design Portfolio <span>↗</span></a>
+          <a href="https://github.com/ShaswotBh" target="_blank" rel="noopener noreferrer" class="view-all-btn cta-match-header">GitHub <span>↗</span></a>
+          <a href="https://www.linkedin.com/in/shaswot-bhandari-508b73283" target="_blank" rel="noopener noreferrer" class="view-all-btn cta-match-header">LinkedIn <span>↗</span></a>
+          <a href="#contact" class="view-all-btn cta-match-header">Send Message <span>↗</span></a>
+          <a href="images/Shaswot_Bhandari_CV.pdf" target="_blank" rel="noopener noreferrer" class="view-all-btn cta-match-header">Download CV <span>↗</span></a>
+        </div>
+
+        <!-- Photo — replace src with your actual photo -->
+        <div class="about-photo-wrap reveal-up">
+          <img src="images/profile-photo.png" alt="Shaswot Bhandari portrait" />
+          <p class="photo-caption">— That's me</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EDUCATION ═══════════════════ -->
+  <section id="education">
+    <div class="projects-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="education-grid">
+      <div class="education-card reveal-up">
+        <p class="education-label">Current Study</p>
+        <h3>Bachelor of Computer Science (Hons) with AI</h3>
+        <p>IIMS College, Bhagwati Bahal, Naxal, Kathmandu</p>
+        <p>3rd year of 4 years</p>
+      </div>
+      <div class="education-card reveal-up">
+        <p class="education-label">Affiliation</p>
+        <h3>Taylor’s University</h3>
+        <p>Malaysia</p>
+        <p>[Add more academic detail here]</p>
+      </div>
+      <div class="education-card reveal-up">
+        <p class="education-label">Background</p>
+        <h3>[Add previous school / college]</h3>
+        <p>[Add level or program]</p>
+        <p>[Add year]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ACHIEVEMENTS ═══════════════════ -->
+  <section id="achievements">
+    <div class="projects-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Achievements</h2>
+    </div>
+
+    <div class="achievements-shell">
+      <div class="achievements-intro reveal-up">
+        <p class="achievements-kicker">Milestones Board</p>
+        <p class="achievements-lede">A curated snapshot of learning, leadership, and showcase moments. Replace each placeholder with your real details.</p>
+      </div>
+
+      <div class="achievements-mosaic">
+        <article class="achievement-tile tile-cert reveal-up">
+          <p class="achievement-badge">Certificates</p>
+          <h3>[Certificates & Credentials]</h3>
+          <ul class="achievement-list">
+            <li>[Certificate Name] — [Issuer] — [Year]</li>
+            <li>[Certificate Name] — [Issuer] — [Year]</li>
+            <li>[Certificate Name] — [Issuer] — [Year]</li>
+          </ul>
+          <span class="achievement-note">Add links or credential IDs</span>
+        </article>
+
+        <article class="achievement-tile tile-bootcamp reveal-up">
+          <p class="achievement-badge">Bootcamp</p>
+          <h3>[Bootcamps]</h3>
+          <ul class="achievement-list">
+            <li>[Bootcamp Name] — [Track/Focus] — [Duration]</li>
+            <li>[Bootcamp Name] — [Track/Focus] — [Duration]</li>
+            <li>[Bootcamp Name] — [Track/Focus] — [Duration]</li>
+          </ul>
+          <span class="achievement-note">Add capstone or final outcome</span>
+        </article>
+
+        <article class="achievement-tile tile-training reveal-up">
+          <p class="achievement-badge">Training</p>
+          <h3>[Trainings & Workshops]</h3>
+          <ul class="achievement-list">
+            <li>[Training Name] — [Skill Focus] — [Year]</li>
+            <li>[Training Name] — [Skill Focus] — [Year]</li>
+            <li>[Training Name] — [Skill Focus] — [Year]</li>
+          </ul>
+          <span class="achievement-note">Add timeline and completion status</span>
+        </article>
+
+        <article class="achievement-tile tile-volunteer reveal-up">
+          <p class="achievement-badge">Volunteering</p>
+          <h3>[Volunteering]</h3>
+          <ul class="achievement-list">
+            <li>[Organization/Event] — [Role] — [Year]</li>
+            <li>[Organization/Event] — [Role] — [Year]</li>
+            <li>[Organization/Event] — [Role] — [Year]</li>
+          </ul>
+          <span class="achievement-note">Add impact, hours, or recognition</span>
+        </article>
+
+        <article class="achievement-tile tile-showcase reveal-up">
+          <p class="achievement-badge">Project Showcase</p>
+          <h3>[Showcases & Exhibitions]</h3>
+          <ul class="achievement-list">
+            <li>[Showcase/Event Name] — [Project Title] — [Year]</li>
+            <li>[Showcase/Event Name] — [Project Title] — [Year]</li>
+            <li>[Showcase/Event Name] — [Project Title] — [Year]</li>
+          </ul>
+          <span class="achievement-note">Add shortlist, rank, or audience result</span>
+        </article>
+
+        <article class="achievement-tile tile-dean reveal-up">
+          <p class="achievement-badge">Dean List</p>
+          <h3>[Dean List & Academic Honors]</h3>
+          <ul class="achievement-list">
+            <li>[Semester / Term] — [Award/Honor]</li>
+            <li>[Semester / Term] — [Award/Honor]</li>
+            <li>[Semester / Term] — [Award/Honor]</li>
+          </ul>
+          <span class="achievement-note">Add GPA, criteria, or cycle</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects">
+    <div class="projects-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+
+    <!-- 
+      Project list. Each item has:
+      - data-color: background tint on hover
+      - .project-hover-img: image that follows cursor (replace src)
+    -->
+    <div class="projects-list">
+
+      <a href="#" class="project-item project-link-transition" data-color="#E8F0FF">
+        <div class="project-left">
+          <span class="project-num">01</span>
+          <div class="project-info">
+            <h3 class="project-name">SmartMatch</h3>
+            <p class="project-tags">Capstone Project &nbsp;·&nbsp; Full Stack + AI</p>
+          </div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2026</span>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-hover-img">
+          <img src="images/behance-showcase-preview.png" alt="SmartMatch project preview" />
+        </div>
+      </a>
+
+      <a href="#" class="project-item project-link-transition" data-color="#EDF0F0">
+        <div class="project-left">
+          <span class="project-num">02</span>
+          <div class="project-info">
+            <h3 class="project-name">JavaFX Nepal Tourism App</h3>
+            <p class="project-tags">Desktop App &nbsp;·&nbsp; JavaFX</p>
+          </div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2025</span>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-hover-img">
+          <img src="images/project-two-preview.jpg" alt="JavaFX Nepal Tourism app preview" />
+        </div>
+      </a>
+
+      <a href="#" class="project-item project-link-transition" data-color="#EDE6F0">
+        <div class="project-left">
+          <span class="project-num">03</span>
+          <div class="project-info">
+            <h3 class="project-name">ML Vegetable Price Prediction</h3>
+            <p class="project-tags">Machine Learning &nbsp;·&nbsp; Data Modeling</p>
+          </div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2025</span>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-hover-img">
+          <img src="images/project-three-preview.jpg" alt="ML vegetable price prediction project preview" />
+        </div>
+      </a>
+
+      <a href="https://www.behance.net/shaswotbhandari" class="project-item project-link-transition" data-color="#F0EAE6">
+        <div class="project-left">
+          <span class="project-num">04</span>
+          <div class="project-info">
+            <h3 class="project-name">Behance Portfolio</h3>
+            <p class="project-tags">Visual Design &nbsp;·&nbsp; Portfolio</p>
+          </div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2026</span>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-hover-img">
+          <img src="images/project-four-preview.jpg" alt="Behance portfolio preview" />
+        </div>
+      </a>
+
+    </div>
+
+    <div class="projects-footer reveal-up">
+      <a href="https://github.com/ShaswotBh" target="_blank" class="view-all-btn cta-match-header">
+        View all on GitHub <span>↗</span>
+      </a>
+    </div>
+
+    <div class="my-project-wrap reveal-up">
+      <p class="my-project-note">Extra visual snapshots</p>
+      <div class="my-project-grid">
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Apple Juice Ad project preview">
+          <img src="images/Apple-Juice-Ad.jpg" alt="Apple Juice Ad project preview" />
+        </button>
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Coffee Ad project preview">
+          <img src="images/Coffee-ad.jpg" alt="Coffee Ad project preview" />
+        </button>
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Hot and Spicy project preview">
+          <img src="images/Hot-&-Spicy.jpg" alt="Hot and Spicy project preview" />
+        </button>
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Senna Formula 1 project preview">
+          <img src="images/Senna-(F1).jpg" alt="Senna Formula 1 project preview" />
+        </button>
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Sprite Ad project preview">
+          <img src="images/Sprite-Ad.jpg" alt="Sprite Ad project preview" />
+        </button>
+        <button type="button" class="my-project-thumb project-thumb-trigger" aria-label="Open Untitled concept project preview">
+          <img src="images/Untitled-1.jpg" alt="Untitled concept project preview" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section id="skills">
+    <div class="skills-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal-up">
+        <h4 class="skill-group-title">Programming</h4>
+        <ul class="skill-list">
+          <li>Java</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal-up">
+        <h4 class="skill-group-title">Frameworks</h4>
+        <ul class="skill-list">
+          <li>JavaFX</li>
+          <li>React (Learning / Practice)</li>
+          <li>Node.js (Basics)</li>
+          <li>GSAP Animation</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal-up">
+        <h4 class="skill-group-title">Database & AI</h4>
+        <ul class="skill-list">
+          <li>MySQL</li>
+          <li>SQLite</li>
+          <li>Machine Learning Fundamentals</li>
+          <li>Data Preprocessing</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal-up">
+        <h4 class="skill-group-title">Design & Product</h4>
+        <ul class="skill-list">
+          <li>UI/UX Design</li>
+          <li>Brand Identity</li>
+          <li>Social Media Creatives</li>
+          <li>Figma / Photoshop / Illustrator</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ MARQUEE ═══════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>I enjoy turning rough ideas into polished interfaces.</span><span class="mdot">·</span>
+        <span>Some days I design logos, other days I debug models.</span><span class="mdot">·</span>
+        <span>SmartMatch is my current favorite build challenge.</span><span class="mdot">·</span>
+        <span>I care about clean typography and readable code equally.</span><span class="mdot">·</span>
+        <span>Based in Kathmandu, building projects for global audiences.</span><span class="mdot">·</span>
+        <span>I like solving UX friction before adding visual polish.</span><span class="mdot">·</span>
+        <span>My workflow usually starts with sketches, then Figma, then code.</span><span class="mdot">·</span>
+        <span>I’m currently improving full-stack and ML engineering depth.</span><span class="mdot">·</span>
+        <span>Good portfolio projects should look good and work fast.</span><span class="mdot">·</span>
+        <span>I learn fastest by shipping real projects.</span><span class="mdot">·</span>
+        <span>Design systems and reusable components save serious time.</span><span class="mdot">·</span>
+        <span>Debugging sessions usually end with better architecture ideas.</span><span class="mdot">·</span>
+      </div>
+      <div class="marquee-content">
+        <span>I enjoy turning rough ideas into polished interfaces.</span><span class="mdot">·</span>
+        <span>Some days I design logos, other days I debug models.</span><span class="mdot">·</span>
+        <span>SmartMatch is my current favorite build challenge.</span><span class="mdot">·</span>
+        <span>I care about clean typography and readable code equally.</span><span class="mdot">·</span>
+        <span>Based in Kathmandu, building projects for global audiences.</span><span class="mdot">·</span>
+        <span>I like solving UX friction before adding visual polish.</span><span class="mdot">·</span>
+        <span>My workflow usually starts with sketches, then Figma, then code.</span><span class="mdot">·</span>
+        <span>I’m currently improving full-stack and ML engineering depth.</span><span class="mdot">·</span>
+        <span>Good portfolio projects should look good and work fast.</span><span class="mdot">·</span>
+        <span>I learn fastest by shipping real projects.</span><span class="mdot">·</span>
+        <span>Design systems and reusable components save serious time.</span><span class="mdot">·</span>
+        <span>Debugging sessions usually end with better architecture ideas.</span><span class="mdot">·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact">
+    <div class="contact-inner">
+      <span class="section-num">06</span>
+      <h2 class="contact-headline reveal-up">
+        Send a<br /><em>message.</em>
+      </h2>
+      <a href="mailto:shaswotbhandari1@gmail.com" class="contact-email reveal-up" id="copy-email" data-copy-text="shaswotbhandari1@gmail.com">shaswotbhandari1@gmail.com</a>
+
+      <div class="contact-details reveal-up">
+        <span>Kathmandu, Nepal</span>
+        <span>[Add phone number]</span>
+        <span>[Add extra contact detail]</span>
+      </div>
+
+      <form
+        class="message-form reveal-up"
+        action="https://formsubmit.co/ajax/shaswotbhandari1@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Portfolio Message" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="text" name="name" placeholder="Your name" aria-label="Your name" required />
+        <input type="email" name="email" placeholder="Your email" aria-label="Your email" required />
+        <textarea name="message" placeholder="Write your message" aria-label="Write your message" required></textarea>
+        <button type="submit" class="view-all-btn cta-match-header">Send Message <span>↗</span></button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-profile reveal-up">
+        <div>
+          <a href="#hero" class="footer-brand" aria-label="Back to top">
+            <span class="footer-brand-mark" aria-hidden="true">SB</span>
+            <span class="footer-brand-copy">
+              <span class="footer-brand-name">Shaswot Bhandari</span>
+              <span class="footer-brand-role">Designer / Developer</span>
+            </span>
+          </a>
+          <p class="footer-kicker footer-kicker-intro">A little about me</p>
+          <p class="footer-intro">
+            I’m Shaswot Bhandari, a designer and developer from Kathmandu who likes calm interfaces,
+            clean visuals, and building work that feels thoughtful.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-links-wrap reveal-up">
+        <p class="footer-kicker">Navigate</p>
+        <div class="footer-links">
+          <a href="#hero" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#achievements" class="footer-link">Achievements</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-services reveal-up">
+        <p class="footer-kicker">Services</p>
+        <ul class="footer-service-list">
+          <li>Graphic Design</li>
+          <li>UI/UX Design</li>
+          <li>Brand Identity</li>
+          <li>Web Design</li>
+        </ul>
+      </div>
+
+      <div class="footer-meta reveal-up">
+        <p class="footer-kicker">Contact</p>
+        <a href="mailto:shaswotbhandari1@gmail.com" class="footer-mail">shaswotbhandari1@gmail.com</a>
+        <p class="footer-small">Kathmandu, Nepal</p>
+        <p class="footer-small">Timezone: NPT (<span id="npt-clock">--:--:--</span>)</p>
+        <p class="footer-small">Open to freelance work</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Shaswot Bhandari</span>
+      <span class="footer-built">Designer · Developer · All rights reserved</span>
+    </div>
+  </footer>
+
+  <div class="copy-toast" id="copy-toast" aria-live="polite" aria-atomic="true">Copied</div>
+
+  <div class="message-popup" id="message-popup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="message-popup-title">
+    <div class="message-popup-card">
+      <p class="message-popup-kicker">Contact</p>
+      <h3 class="message-popup-title" id="message-popup-title">Your message has been sent.</h3>
+      <p class="message-popup-text" id="message-popup-text">Thanks for reaching out. Click below to continue browsing the page.</p>
+      <button type="button" class="view-all-btn message-popup-close" id="message-popup-close">Back to page <span>↗</span></button>
+    </div>
+  </div>
+
+  <div class="project-popup" id="project-popup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-popup-title">
+    <div class="project-popup-dialog">
+      <p class="project-popup-title" id="project-popup-title">Project Preview</p>
+      <button type="button" class="project-popup-close" id="project-popup-close" aria-label="Close project preview">×</button>
+      <img src="" alt="Enlarged project preview" class="project-popup-image" id="project-popup-image" />
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="back-to-hero"
+    id="back-to-hero"
+    aria-label="Back to hero section"
+    aria-hidden="true"
+    title="Back to top"
+  >
+    ↑
+  </button>
+
+  <div class="freeze-overlay" id="freeze-overlay" aria-hidden="true"></div>
+
+  <div class="truth-modal" id="truth-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="truth-modal-title">
+    <div class="truth-modal-dialog">
+      <button type="button" class="truth-modal-close" id="truth-modal-close" aria-label="Close profile mode">×</button>
+      <p class="truth-modal-kicker">Profile mode</p>
+      <h3 class="truth-modal-title" id="truth-modal-title">Truth Mode</h3>
+      <div class="truth-modal-copy">
+        <p>Sleep = optional.</p>
+        <p>Runs on coffee & deadlines.</p>
+        <p>Debugging life since 2004.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
