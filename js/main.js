@@ -619,20 +619,14 @@ if (pageLoader && loaderFill) {
       }
     });
 
-    const roadWidth = loaderRoad ? loaderRoad.clientWidth : 320;
-    const carWidth = loaderFill.clientWidth || 64;
-    const travelX = Math.max(roadWidth - carWidth - 20, 220);
-
     loaderTl.fromTo(loaderFill,
-      { x: 0, y: 0, rotate: 0 },
+      { width: '0%' },
       {
-        x: travelX,
-        y: -1,
-        rotate: 0.4,
-        duration: 1.35,
-        ease: 'power1.inOut'
+        width: '100%',
+        duration: 1.5,
+        ease: 'power2.inOut'
       }
-    ).to(pageLoader, { yPercent: -100, duration: 0.8, ease: 'power4.inOut' }, '+=0.35');
+    ).to(pageLoader, { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, '+=0.2');
   }
 
   window.addEventListener('pageshow', () => {
